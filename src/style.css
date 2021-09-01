@@ -1,3 +1,16 @@
-.hello {
-  color: red;
+body{
+  background-color: rgb(153, 133, 133);
+}
+
+.score-input-display_container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.score-display-head{
+  display: flex;
+}
+
+.recent-scores{
+  padding-right: 30px;
 }
