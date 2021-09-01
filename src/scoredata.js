@@ -1,5 +1,5 @@
 
-let score = [
+let scores = [
   {
     Name: 'Chike',
     score: 71
@@ -30,3 +30,4 @@ let score = [
   },
 ]
 
+export default scores;
