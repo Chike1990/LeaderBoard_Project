@@ -1,7 +1,10 @@
-let baseUrl = "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games";
+let baseUrl =
+  "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/";
 
-const createGame = async() => {
-  const game = { name: "My game" }
+let globalGameId;
+
+const createGame = async () => {
+  const game = { name: "My game" };
   const response = await fetch(baseUrl, {
     method: "POST",
     headers: {
@@ -9,42 +12,31 @@ const createGame = async() => {
     },
     body: JSON.stringify(game),
   });
-  const data = await response.JSON();
-  console(data);
+  const data = await response.json();
+  const splitData = data.result.split(" ");
+  return splitData[3];
 };
 
-createGame();
+if (!globalGameId) {
+  const gameId = await createGame();
+  globalGameId = gameId;
+  console.log(globalGameId);
+}
 
-const scores = [
-  {
-    Name: 'Chike',
-    score: 71,
-  },
-  {
-    Name: 'Nelsino',
-    score: 83,
-  },
-  {
-    Name: 'Jose',
-    score: 78,
-  },
-  {
-    Name: 'Dante',
-    score: 80,
-  },
-  {
-    Name: 'Hamza',
-    score: 97,
-  },
-  {
-    Name: 'Agbo',
-    score: 76,
-  },
-  {
-    Name: 'Enio',
-    score: 98,
-  },
-];
+export const fetchGameData = async () => {
+  const response = await fetch(baseUrl + globalGameId + "/scores/");
+  const data = await response.json();
+  return data.result;
+};
 
-export default scores;
-
+export const addScore = async (data) => {
+  console.log(data);
+  const response = await fetch(baseUrl + globalGameId + "/scores/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  return await response.json();
+};
