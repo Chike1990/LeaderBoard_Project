@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -55,7 +55,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* 2 */
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDom = [];
@@ -158,7 +157,6 @@ module.exports = function (list, options) {
 /* 3 */
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -212,7 +210,6 @@ module.exports = domAPI;
 /* 4 */
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -257,7 +254,6 @@ module.exports = insertBySelector;
 /* 5 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -275,7 +271,6 @@ module.exports = setAttributesWithoutAttributes;
 /* 6 */
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -292,7 +287,6 @@ module.exports = insertStyleElement;
 /* 7 */
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -314,7 +308,6 @@ module.exports = styleTagTransform;
 /* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -334,7 +327,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "*,\r\n*::before,\r\n*::after {\r\n  ma
 /* 9 */
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -404,27 +396,51 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 10 */
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-let baseUrl =
-  "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createGame": () => (/* binding */ createGame),
+/* harmony export */   "fetchGameData": () => (/* binding */ fetchGameData),
+/* harmony export */   "addScore": () => (/* binding */ addScore)
+/* harmony export */ });
+const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 
 let globalGameId;
 
 const createGame = () => {
-  const game = { name: "My game" };
+  const game = { name: 'My game' };
   fetch(baseUrl, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(game),
-  }).then(res => {
-    console.log(res)
+  }).then((res) => res.json()).then((data) => {
+    if (!globalGameId) {
+      const gameId = data.result.split(' ')[3];
+      globalGameId = gameId;
+    }
   });
-  // const data = await response.json();
-  // const splitData = data.result.split(" ");
-  // return splitData[3];
+};
+
+createGame();
+
+const fetchGameData = async () => {
+  const response = await fetch(`${baseUrl + globalGameId}/scores/`);
+  const data = await response.json();
+  return data.result;
+};
+
+const addScore = async (data) => {
+  const response = await fetch(`${baseUrl + globalGameId}/scores/`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+  return response.json();
 };
 
 /***/ })
@@ -497,28 +513,42 @@ const createGame = () => {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _scoredata_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
-/* harmony import */ var _scoredata_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scoredata_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
+
+let scores = [];
 
 const scoreDisplay = document.querySelector('.score-display');
-const displayScores = () => {
-  _scoredata_js__WEBPACK_IMPORTED_MODULE_1___default().forEach((score) => {
+
+document.querySelector('#refresh').addEventListener('click', async () => {
+  scores = await (0,_scoredata_js__WEBPACK_IMPORTED_MODULE_1__.fetchGameData)();
+});
+
+const displayScore = () => {
+  scoreDisplay.innerHTML = '';
+  scores.forEach((score) => {
     const template = `<div class="score-display-item">
-      <span class="name">${score.Name}</span>
+      <span class="name">${score.user}</span>
       <span class="score">${score.score}</span>
     </div>`;
     scoreDisplay.innerHTML += template;
   });
 };
+displayScore();
 
-displayScores();
+document.querySelector('.add-score').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const user = document.querySelector('#name').value;
+  const score = document.querySelector('#score').value;
+  await (0,_scoredata_js__WEBPACK_IMPORTED_MODULE_1__.addScore)({ user, score });
+  scores = await (0,_scoredata_js__WEBPACK_IMPORTED_MODULE_1__.fetchGameData)();
+  displayScore();
+});
 
 })();
 
