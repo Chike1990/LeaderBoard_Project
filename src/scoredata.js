@@ -20,23 +20,9 @@ export const createGame = () => {
       console.log(globalGameId)
     }    
   }).catch(err => console.log(err));
-  // const data = await response.json();
-  // const splitData = data.result.split(" ");
-  // return splitData[3];
 };
 
 createGame()
-
-// export const fetchGameData = async () => {
-//   return fetch(baseUrl + globalGameId + "/scores/")
-//     .then(res => {
-//       return res.json()
-//     })
-//     .then(data => {
-//       return data.result
-//     })
-//     .catch(err => console.log(err));
-// };
 
 export const fetchGameData = async () => {
   const response = await fetch(baseUrl + globalGameId + "/scores/");
