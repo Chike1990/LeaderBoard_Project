@@ -12,35 +12,43 @@
 <body>
   <h1 class="page-title">Leaderboard</h1>
 
-  <div class="score-input-display_container">
-    <div class="score-display_container">
-      <div class="score-display-head">
-        <h3 class="heading-primary">Recent Scores</h3>
-        <input type="button" class="refresh" value="Refresh" />
+    <div class="score-input-display_container">
+      <div class="score-display_container">
+        <div class="score-display-head">
+          <h3 class="heading-primary">Recent Scores</h3>
+          <input type="button" class="refresh" id="refresh" value="Refresh" />
+        </div>
+        <div class="score-display">
+          <!-- <div class="score-display-item">
+            <span class="name">John</span>
+            <span class="">40</span>
+          </div>
+          <div class="score-display-item">
+            <span class="name">Mary</span>
+            <span class="">20</span>
+          </div> -->
+        </div>
       </div>
-      <div class="score-display">
-        <div class="score-display-item">
-          <span class="name">Jude</span>
-          <span class="score">45</span>
-        </div>
-        <div class="score-display-item">
-          <span class="name">Mary</span>
-          <span class="score">33</span>
-        </div>
 
-
+      <div class="score-input_container">
+        <h3 class="heading-primary">Add your score</h3>
+        <form class="input-box add-score">
+          <input
+            type="text"
+            class="input"
+            id="name"
+            placeholder="Your name"
+          /><br />
+          <input
+            type="text"
+            id="score"
+            class="margin-30 input"
+            placeholder="Your score"
+          /><br />
+          <button type="submit" class="refresh">Submit</button>
+        </form>
       </div>
     </div>
-
-    <div class="score-input_container">
-      <h3 class="heading-primary">Add your score</h3>
-      <div class="input-box">
-        <input type="text" class="input" placeholder="Your name" /><br />
-        <input type="text" class="input margin30" placeholder="Your score" /><br />
-        <button class="refresh" type="submit">Submit</button>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -55,6 +55,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* 2 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDom = [];
@@ -157,6 +158,7 @@ module.exports = function (list, options) {
 /* 3 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -210,6 +212,7 @@ module.exports = domAPI;
 /* 4 */
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -254,6 +257,7 @@ module.exports = insertBySelector;
 /* 5 */
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -271,6 +275,7 @@ module.exports = setAttributesWithoutAttributes;
 /* 6 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -287,6 +292,7 @@ module.exports = insertStyleElement;
 /* 7 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -308,6 +314,7 @@ module.exports = styleTagTransform;
 /* 8 */
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -318,7 +325,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "*,*::before, *::after {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.margin30{\r\n  margin-bottom: 30px !important;\r\n}\r\n\r\nbody{\r\n  background-color: rgb(233, 227, 227);\r\n}\r\n\r\n.page-title {\r\n  text-align: center;\r\n  text-transform: uppercase;\r\n  font-weight: 100;\r\n  margin: 40px 0 30px 0;\r\n}\r\n\r\n.score-input-display_container{\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\n.score-display_container {\r\n  /* width: 60%; */\r\n}\r\n\r\n.score-input_container{\r\n  width: 20%;\r\n\r\n}\r\n\r\n.score-display-head{\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.score-display_container{\r\nwidth:35%;\r\n}\r\n\r\n.score-display{\r\n  border: 1px solid #3d1919;\r\n  margin-top: 25px;\r\n}\r\n\r\n.score-display-item{\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 10px 10px;\r\n}\r\n\r\n.score-display-item:nth-child(even) {\r\n  background-color: rgb(110, 102, 110);\r\n  color: white;\r\n}\r\n\r\n.heading-primary{\r\n  margin-right: 30px;\r\n  text-transform: uppercase;\r\n  font-size: 20px;\r\n  font-weight: 1000;\r\n}\r\n\r\n.refresh {\r\n  background-color: #3d1919;\r\n  color: #fff;\r\n  border: none;\r\n  outline: none;\r\n  padding: 8px 14px;\r\n  text-transform: uppercase;\r\n  font-size: 14px;\r\n}\r\n\r\n.input{\r\n  outline: none;\r\n  border: 1px solid #3d1919;\r\n  padding: 10px 0 10px 10px;\r\n  width: 100%;\r\n  margin: 8px 0 8px 0;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "*,\r\n*::before,\r\n*::after {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.margin30 {\r\n  margin-bottom: 30px !important;\r\n}\r\n\r\nbody {\r\n  background-color: rgb(233, 227, 227);\r\n}\r\n\r\n.page-title {\r\n  text-align: left;\r\n  text-transform: uppercase;\r\n  font-weight: 100;\r\n  margin: 40px 0 30px 0;\r\n}\r\n\r\n.score-input-display_container {\r\n  display: flex;\r\n  justify-content: space-around;\r\n}\r\n\r\n.score-input_container {\r\n  width: 20%;\r\n}\r\n\r\n.score-display-head {\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.score-display_container {\r\n  width: 35%;\r\n}\r\n\r\n.score-display {\r\n  border: 1px solid #3d1919;\r\n  margin-top: 25px;\r\n}\r\n\r\n.score-display-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 10px 10px;\r\n}\r\n\r\n.score-display-item:nth-child(even) {\r\n  background-color: rgb(110, 102, 110);\r\n  color: white;\r\n}\r\n\r\n.heading-primary {\r\n  margin-right: 30px;\r\n  text-transform: uppercase;\r\n  font-size: 20px;\r\n  font-weight: 1000;\r\n}\r\n\r\n.refresh {\r\n  background-color: #3d1919;\r\n  color: #fff;\r\n  border: none;\r\n  outline: none;\r\n  padding: 8px 14px;\r\n  text-transform: uppercase;\r\n  font-size: 14px;\r\n}\r\n\r\n.input {\r\n  outline: none;\r\n  border: 1px solid #3d1919;\r\n  padding: 10px 0 10px 10px;\r\n  width: 100%;\r\n  margin: 8px 0 8px 0;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -327,6 +334,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "*,*::before, *::after {\r\n  margin: 0
 /* 9 */
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -396,45 +404,28 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 /* 10 */
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
+let baseUrl =
+  "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/";
 
-let scores = [
-  {
-    Name: 'Chike',
-    score: 71
-  },
-  {
-    Name: 'Nelsino',
-    score: 83
-  },
-  {
-    Name: 'Jose',
-    score: 78
-  },
-  {
-    Name: 'Dante',
-    score: 80
-  },
-  {
-    Name: 'Hamza',
-    score: 97
-  },
-  {
-    Name: 'Agbo',
-    score: 76
-  },
-  {
-    Name: 'Enio',
-    score: 98
-  },
-]
+let globalGameId;
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scores);
+const createGame = () => {
+  const game = { name: "My game" };
+  fetch(baseUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(game),
+  }).then(res => {
+    console.log(res)
+  });
+  // const data = await response.json();
+  // const splitData = data.result.split(" ");
+  // return splitData[3];
+};
 
 /***/ })
 /******/ 	]);
@@ -506,20 +497,20 @@ let scores = [
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _scoredata_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _scoredata_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scoredata_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
-console.log(_scoredata_js__WEBPACK_IMPORTED_MODULE_1__.default);
-const scoreDisplay = document.querySelector(".score-display");
+const scoreDisplay = document.querySelector('.score-display');
 const displayScores = () => {
-  _scoredata_js__WEBPACK_IMPORTED_MODULE_1__.default.forEach(score => {
-    const template =
-      `<div class="score-display-item">
+  _scoredata_js__WEBPACK_IMPORTED_MODULE_1___default().forEach((score) => {
+    const template = `<div class="score-display-item">
       <span class="name">${score.Name}</span>
       <span class="score">${score.score}</span>
     </div>`;
