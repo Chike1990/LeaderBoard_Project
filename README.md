@@ -1,8 +1,8 @@
 # LeaderBoard_Project
 
-Leaderboard is a web application that allows users to play and display their game scores. It provides an interface for adding player name and score, for visualizing the list of scores for a collection of players. This is achieved using plain HTML, CSS, JavaScript, git flow, and webpack.
+Leaderboard is a web application that allows users to play and display their game scores. It provides an interface for adding player name and score, for visualizing the list of scores for a collection of players. This is achieved using plain HTML, CSS, JavaScript, git flow, webpack, and Leaderboard API.
 
-![Screenshot](src/projectScreenshot.png)
+![Screenshot](src/finalProjectScreenshot.png)
 
 ## Built With
 
@@ -12,6 +12,7 @@ Leaderboard is a web application that allows users to play and display their gam
 - Git flow
 - GitHub
 - web pack
+- LeaderBoard API
 
 ### Prerequisites
 
