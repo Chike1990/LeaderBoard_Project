@@ -9,7 +9,6 @@ document.querySelector('#refresh').addEventListener('click', async () => {
   scores = await fetchGameData();
 });
 
-
 const displayScore = () => {
   scoreDisplay.innerHTML = '';
   scores.forEach((score) => {
